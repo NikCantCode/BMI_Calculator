@@ -1,0 +1,41 @@
+.container-fluid {
+    background-image: url('https://images.wallpaperscraft.com/image/single/light_faded_background_85547_1280x720.jpg');
+    background-size: cover;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.main-styling {
+    background-color: white;
+    box-shadow: 5px 5px 10px 2px #888888;
+}
+
+.btn-styling {
+    background-color: black;
+    color: white;
+}
+
+.btn-styling:hover {
+    background-color: orangered;
+    color: white;
+}
+
+#bmiValue {
+    font-size: 2vh;
+}
+
+#bmiResult {
+    font-size: 3vh;
+}
+
+.title-styling {
+    font-size: 4vh;
+}
