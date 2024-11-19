@@ -83,6 +83,7 @@ dataSubmit.addEventListener("click", () => {
 });
 
 // old code last update Aug 26, 2022
+
 // check is freedom unit is seleted
 // let selectImperial = 0;
 
