@@ -10,6 +10,7 @@ const selectMetric = document.querySelector("#selectMetric");
 const dataSubmit = document.querySelector("#dataSubmit");
 const bmiValue = document.querySelector("#bmiValue");
 const bmiResult = document.querySelector("#bmiResult");
+const formControl = document.querySelectorAll(".form-control");
 
 function unitSwitcher() {
   if (selectImperial === 0) {
@@ -28,6 +29,16 @@ function bmiCalc(weight, height) {
     return ((weight / (height * height)) * 703).toFixed(1);
   }
   return ((weight / (height * height)) * 10000).toFixed(1);
+}
+
+function checkInput() {
+  for (let i = 0; i < formControl.length; i++) {
+    if (formControl[i].value == "") {
+      formControl[i].classList.add("is-invalid");
+    } else {
+      formControl[i].classList.remove("is-invalid");
+    }
+  }
 }
 
 function bmiClass(range) {
@@ -61,10 +72,11 @@ function bmiClass(range) {
 selectMetric.addEventListener("click", unitSwitcher);
 
 dataSubmit.addEventListener("click", () => {
+  checkInput();
   if (checkWeightInput.value !== "" || checkHeightInput.value !== "") {
     let result = bmiCalc(checkWeightInput.value, checkHeightInput.value);
     bmiValue.innerHTML = `BMI = ${result}kg/m<sup>2</sup>`;
-    bmiResult.textContent = `BMI category ${bmiClass(result)}`;
+    bmiResult.textContent = `BMI Category : ${bmiClass(result)}`;
     return;
   }
   bmiResult.innerHTML = "<small>Input is required !<small>";
